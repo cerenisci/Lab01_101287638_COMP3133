@@ -9,7 +9,6 @@ const deleteFile = (filename) => {
   }
 };
 
-// Function to filter and write data to respective files
 const filterData = (inputFile, outputCanada, outputUSA) => {
   const canadaStream = fs.createWriteStream(outputCanada, { flags: 'a' });
   const usaStream = fs.createWriteStream(outputUSA, { flags: 'a' });
@@ -33,12 +32,10 @@ const filterData = (inputFile, outputCanada, outputUSA) => {
     });
 };
 
-// Define file paths
 const inputFile = './input_countries.csv';
 const canadaFile = './canada.txt';
 const usaFile = './usa.txt';
 
-// Delete existing files and process the input
 deleteFile(canadaFile);
 deleteFile(usaFile);
 filterData(inputFile, canadaFile, usaFile);
